@@ -1,0 +1,132 @@
+.cart{
+    position:absolute;
+    right:0px;
+    cursor: pointer
+}
+
+.length-indicator{
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    left:-20px;
+    top:0;
+    background: rgba(255, 0, 0, 0.815);
+    border-radius: 10px;
+    height:20px;
+    width: 20px;
+    font-size:15px;
+}
+
+.cartMenu{
+    position:absolute;
+    right:20px;
+    top:50px;
+    width:90%;
+    max-width: 500px;
+    max-height:500px;
+    border-radius:20px;
+    background: url('../../assets/round-pattern-cart.png');
+    background-color: #D0D0D0;
+    z-index:3;
+    padding:10px;
+}
+.cart-list{
+    width:100%;
+    max-height:250px;
+    border-radius:10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+.item-list{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:95%;
+    height:50px;
+    border-radius:50px;
+    background:#151A1F;
+    margin:5px;
+    flex-shrink:0;
+}
+
+.info-buy{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#151A1F;
+}
+.total-row{
+    display:flex;
+    width:100%;
+    justify-content: flex-end;
+}
+.button-row{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.description{
+    width:60%;
+    text-align: center;
+    color:#151a1f83;
+    font-size:12px;
+}
+
+.svg-ico{
+    pointer-events: none;
+}
+.quantity{
+    cursor: pointer;
+}
+.btn{
+    margin:10px;
+    height:45px !important;
+}
+
+.quantity-control{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size:25px;
+    width:25%;
+}
+
+.emptyCart{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:60px;
+    font-weight: 600;
+    color:#151A1F;
+}
+
+.item-name{
+    width:50%;
+    text-align:center
+}
+.item-price{
+    width:15%;
+    text-align:center
+}
+.item-quantity{
+    width:15%;
+    text-align:center
+}
+
+@media(max-width:600px){
+    .cartMenu{
+        right:7px;
+        font-size:70%;
+    }
+    .item-list{
+        width:100%
+    }
+    .description{
+        width:100%;
+    }
+}

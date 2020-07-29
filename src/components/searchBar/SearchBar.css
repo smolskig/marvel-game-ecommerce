@@ -1,0 +1,34 @@
+.inputWrapper{
+    position: relative;
+    display:flex;
+    margin:20px;
+    width:100%;
+    max-width:300px;
+}
+.button-search{
+    position:absolute;
+    right:11px;
+    top:11px;
+
+    border:none;
+    background: none;
+    font-size:20px;
+    color:#f2f2f2;
+    outline:none;
+}
+.button-search:hover{
+    cursor: pointer;
+}
+
+.marvelInput{
+    width:100%;
+    max-width:300px;
+    height:45px;
+    border-radius:10px;
+    border:none;
+    outline: none;
+    background: #414141;
+    color:#f2f2f2;
+    padding-left:10px;
+    font-size:18px;
+}
