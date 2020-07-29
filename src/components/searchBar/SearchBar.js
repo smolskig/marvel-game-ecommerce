@@ -22,7 +22,7 @@ const SerachBar = ()=>{
   },[textField,dispatch])
   return (
     <div className="inputWrapper">
-        <input type="text" value={textField} onChange={handleInput} className="marvelInput" placeholder="Digite o nome do Jogo" />
+        <input type="text" value={textField} onChange={handleInput} className="marvelInput nohighlight noselect" placeholder="Digite o nome do Jogo" />
         <button type="button" className="button-search">
             <FiSearch/>
         </button>

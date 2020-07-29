@@ -77,7 +77,7 @@ const GameModal = () => {
           </div>
         </div>
         <div className="modal-dark" onClick={(e) => {
-              dispatch(toggleModal({ modalOpen: false }));
+              dispatch(toggleModal({ modalOpen: false }))
             }
           }>
         </div>
