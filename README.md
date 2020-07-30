@@ -1,68 +1,145 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# E-commerce marvel games
 
-## Available Scripts
+> Aplicação de E-commerce dos jogos da marvel, desenvolvido em 1 semana utilizando Reactjs + Redux.
 
-In the project directory, you can run:
+## Requisitos do sistema
 
-### `npm start`
+### Funcionais
+ + O cliente deve poder ter um cadastro na aplicação para realizar as compras
+ + O sistema deve exibir uma lista dos produtos que podem ser comprados
+ + O cliente deve poder adicionar produtos em um carrinho de compras
+ + O cliente deve poder remover produtos do carrinho de compras
+ + O cliente deve poder acrescentar e decrementar a quantidade de um produto
+ + O cliente deve poder finalizar a compra e ir para uma tela de pagamento 
+ 
+### Não-Funcionais
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ + Os dados devem ser requisitados da api oficial da marvel
+ + O sistema deve ter fácil navegação e possuir poucos sub-menus
+ + A aplicação deve ser desenvolvida utilizando Reactjs + Redux
+ + O sistema de login deve usar JWT para autênticação do usuário
+ 
+## Requisitos escolhidos para o desenvolvimento do MVP
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Funcionais
 
-### `npm test`
+ + O sistema deve exibir uma lista dos produtos que podem ser comprados 
+  
+  Esse requisito é necessário para que o cliente consiga escolher o produto a ser comprado.
+  
+ + O cliente deve poder adicionar produtos em um carrinho de compras
+  
+  Esse requisito é necessário para que o cliente possa comprar mais de um produto ao mesmo tempo.
+  
+ + O cliente deve poder remover produtos do carrinho de compras
+ 
+  Esse requisito é necessario para que o cliente possa remover algum produto, se caso nao o desejar mais.
+  
+ + O cliente deve poder acrescentar e decrementar a quantidade de um produto
+ 
+  Esse requisito é necessario para que o cliente possa aumentar ou diminuir a quantidade do mesmo produto dentro de uma compra.
+  
+ 
+ ### Não-Funcionais
+ 
+ + Os dados devem ser requisitados da api oficial da marvel
+ 
+  Esse requisito é necessário para que os produtos tenham sempre alta fidelidade descritiva com o produto real.
+  
+ + O sistema deve ter fácil navegação e possuir poucos sub-menus
+ 
+  Esse requisito é necessário para a facil utilização e entendimento do sistema.
+  
+ + A aplicação deve ser desenvolvida utilizando Reactjs + Redux
+ 
+  Esse requisito é necessário para que haja facilidade na manutenção e revisão do código.
+  
+ 
+# Overview da aplicação 
+ 
+## 📱 Layout Mobile: 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://user-images.githubusercontent.com/50807768/88953711-b5b59300-d26f-11ea-9402-894e88acda33.jpeg" alt="drawing" width="300"/>
 
-### `npm run build`
+## 💻 Layout Web:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://user-images.githubusercontent.com/50807768/88953674-a6cee080-d26f-11ea-8e77-a3102486ec67.png" alt="drawing"/>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Principais funcionalidades
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![gif-demonstracao](https://user-images.githubusercontent.com/50807768/88954333-9ec37080-d270-11ea-8f78-b2729d56a447.gif)
 
-### `npm run eject`
+Todas as funcionalidades do sistema foram construídas atraves do gerenciador de estado :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Sistema de carrinho de compras**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Sistema de Requisição e exibição dos jogos**
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Sistema de filtragem dos jogos**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Controle de UI**
 
-## Learn More
+#### API'S utilizadas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para requisitar os dados dos jogos utilizei esta API:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+``` 
+GET: https://www.marvel.com/v1/pagination/search_cards?limit=20&query=marvel&content_type=games
+```
 
-### Code Splitting
+A API de dados consultada retorna apenas os nomes dos arquivos de imagem dos jogos, portanto tive que utilizar outra API oficial para requisitar as imagens.
+``` 
+URL: https://terrigen-cdn-dev.marvel.com/content/prod/1x/<nome_da_imagem>'
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Gerenciamento de estados
+Para gerenciar os estados da aplicação, utilizei **Redux** + **Redux Toolkit** para facilitar a criação das estruturas de gerenciamento.
 
-### Analyzing the Bundle Size
+Estados necessarios para a aplicação :
+ - **Cart**  
+ 
+ Gerencia todas as funcionalidades do carrinho, adicionar produto, incrementar, decrementar e remover.
+ 
+ - **Games** 
+ 
+ Gerencia todas as funcionalidades dos jogos, requisitar dados, selecionar um jogo, filtrar os jogos.
+ 
+ - **UI** 
+ 
+ Gerencia todos os comportamentos da interface, exibir loading spinner, abrir e fechar modal dos jogos, abrir e fechar menu do carrinho.
+ 
+ > Todos os estados se encontram na pasta Slices do projeto.
+ 
+ ### Layout
+ 
+ O Layout foi todo construido com CSS, visei criar uma interface **limpa**, **moderna** e principalmente **responsiva** !
+ 
+ > Para prototipação da interface utilizei o app Figma 
+ 
+ ![responsive](https://user-images.githubusercontent.com/50807768/88942554-d1656d00-d260-11ea-8a3f-e92ee21abb9f.gif)
+ 
+ #### Bibliotecas de UI
+ Utilizei duas bibliotecas externas para UI
+  
+  - react-icons
+  
+  Biblioteca que provê multiplos icones de diferentes estilos
+  
+  - react-loader-spinner
+  
+  Biblioteca que provê multiplos spinners de diferentes estilos
+  
+  ## Testes
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ 
+ 
