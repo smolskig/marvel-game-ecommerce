@@ -22,7 +22,7 @@ function generateGameList(){
         return (
             games.filteredItems.map(game=>{
                 return (
-                    <div key={game.created} className="game-item noselect nohighlight">
+                    <div data-testid="game-list-item" key={game.created} className="game-item noselect nohighlight">
                         <div className="item-content" onClick={()=> pickGame(game)}>
                             <img
                                 className="gameImg"

@@ -32,10 +32,10 @@ const GameModal = () => {
       if(result.includes(games.selected.headline)){
         return <button className="marvel-btn" disabled onClick={()=> addItemToCart(games.selected)} >Você adicionou esse jogo ao carrinho</button>
       }else{
-        return <button className="marvel-btn" onClick={()=> addItemToCart(games.selected)} >Adicionar ao Carrinho</button> 
+        return <button data-testid="add-item-btn" className="marvel-btn" onClick={()=> addItemToCart(games.selected)} >Adicionar ao Carrinho</button> 
       }
     }else{
-      return <button className="marvel-btn" onClick={()=> addItemToCart(games.selected)} >Adicionar ao Carrinho</button>
+      return <button data-testid="add-item-btn" className="marvel-btn" onClick={()=> addItemToCart(games.selected)} >Adicionar ao Carrinho</button>
     }
     
   }
@@ -76,7 +76,7 @@ const GameModal = () => {
             </div>
           </div>
         </div>
-        <div className="modal-dark" onClick={(e) => {
+        <div className="modal-dark" onClick={() => {
               dispatch(toggleModal({ modalOpen: false }))
             }
           }>

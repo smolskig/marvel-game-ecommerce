@@ -1,7 +1,6 @@
 {
   "name": "marvel-app",
   "version": "0.1.0",
-  "proxy":"https://www.marvel.com",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",

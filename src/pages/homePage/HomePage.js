@@ -12,7 +12,7 @@ const HomePage = () => (
         <img className="marvel-icon" src={marvelIcon} alt="marvel-icon"/>
       </header>
       <section className="central-section">
-        <span className="title-text">The most complete games marketplace, from the one of the greatest comics company in the world</span>
+        <span className="title-text">O mais completo marketplace de jogos, de uma das maiores empresas de quadrinhos do mundo.</span>
         <Link to="/games" className="marvel-btn">Todos os Jogos</Link>
       </section>
       <main className="spotlight-area">
