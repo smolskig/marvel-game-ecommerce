@@ -134,7 +134,7 @@ Estados necessarios para a aplicação :
  - Realizei apenas um teste para verificar se os jogos estavam sendo gerados em tela
  
  ## Ciclo de Vida React
- Os componentes React possuem 4 fazes no seu ciclo de vida: **Inicialização**, **Montagem**, **Atualização** e **Desmontagem**.
+ Os componentes React possuem 4 fases no seu ciclo de vida: **Inicialização**, **Montagem**, **Atualização** e **Desmontagem**.
  
  ### Inicialização 
  Nesta fase são montadas as principais estruturas de um componente React, é o momento em que as props e os states são declarados.
