@@ -204,7 +204,24 @@ Dividir código em micro-códigos ajudaria muito também no momento de processar
 
 Outra estratégia extremamente util para SPA's é o conceito de lazy loading, onde só são carregados os bundles necessários para o estado atual de utilização da aplicação.
 
- 
+
+### Instalação 
+Clone o projeto e execute o comando:
+
+```
+$ npm install
+```
+Para executar o projeto execute o comando:
+
+```
+$ npm start
+```
+
+Para executar os testes execute o comando:
+
+```
+$ npm test
+```
  
  
  
