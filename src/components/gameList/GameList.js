@@ -41,7 +41,7 @@ function generateGameList(){
     }
     else{
         return(
-            <div className="center">
+            <div className="center" data-testid="spinner">
             <Loader
                 type="Oval"
                 color="#F0141E"

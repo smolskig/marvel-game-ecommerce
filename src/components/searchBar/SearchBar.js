@@ -17,12 +17,11 @@ const SerachBar = ()=>{
   useEffect(()=>{
     if(textField.length === 0){
       dispatch(resetFilter())
-      console.log('alo')
     }
   },[textField,dispatch])
   return (
-    <div className="inputWrapper">
-        <input type="text" value={textField} onChange={handleInput} className="marvelInput nohighlight noselect" placeholder="Digite o nome do Jogo" />
+    <div className="inputWrapper" >
+        <input data-testid="input-filter" type="text" value={textField} onChange={handleInput} className="marvelInput nohighlight noselect" placeholder="Digite o nome do Jogo" />
         <button type="button" className="button-search">
             <FiSearch/>
         </button>

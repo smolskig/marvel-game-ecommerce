@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitForElement, wait } from '@testing-library/react'
+import { render, waitForElement, fireEvent } from '@testing-library/react'
 
 import { Provider } from 'react-redux'
 import store from '../../store/store'
@@ -11,22 +11,21 @@ import GameList from './GameList'
 import FixedMenu from '../fixedMenu/FixedMenu'
 
 
-test('teste',async ()=>{
-    const history = createMemoryHistory()
-    history.push('/games')
+test('Deve retornar a lista de jogos',async ()=>{
+    jest.setTimeout(10000); // aumenta o timer do jest por conta da requisição
 
-    const { container, getAllByTestId } = render(
+    const history = createMemoryHistory() // cria um history para as rotas
+
+    const { getAllByTestId } = render(   // renderiza todos os componentes necessários
 
         <Provider store={store}>
             <Router history={history}>
-                <FixedMenu/>
                 <GameList/>
+                <FixedMenu/>
             </Router>
         </Provider>
     )
 
-
-    const itemList = await waitForElement(()=>{ getAllByTestId('game-list-item')})
-
-    console.log(itemList)
+    const items = await waitForElement(()=> getAllByTestId('game-list-item'))
+    console.log('ok',items[0].innerHTML)
 })

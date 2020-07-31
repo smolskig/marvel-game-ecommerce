@@ -44,7 +44,7 @@ const GameModal = () => {
     if (ui.modalOpen === true) {
       return (
         <>
-        <div className="modal-wrapper" >
+        <div className="modal-wrapper" data-testid="game-modal" >
           <div className="modal-content">
             <FiX
               className="close-icon"
