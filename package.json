@@ -1,6 +1,7 @@
 {
   "name": "marvel-app",
   "version": "0.1.0",
+  "proxy":"https://www.marvel.com",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
@@ -87,7 +88,7 @@
     ]
   },
   "jest": {
-    "testURL": "http://localhost:3000/",
+    "testURL": "https://www.marvel.com/",
     "roots": [
       "<rootDir>/src"
     ],

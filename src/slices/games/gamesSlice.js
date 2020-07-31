@@ -38,7 +38,7 @@ export const { addGames,selectGame,filterGame,resetFilter } = gamesSlice.actions
 // criando o thunk que chama a api da marvel
 export const requestGames = dispatch => {
     dispatch(toggleLoading({isLoading:true}))
-    axios.get('https://www.marvel.com/v1/pagination/search_cards?limit=20&query=marvel&content_type=games')
+    axios.get('/v1/pagination/search_cards?limit=20&query=marvel&content_type=games')
         .then((res)=> {
             dispatch(addGames(res.data.data))
             dispatch(toggleLoading({isLoading:false}))
